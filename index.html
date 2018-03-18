@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Minería de Datos con R</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="others/cv_anmedinas.pdf">
+    <span class="fa fa-info"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="mailto:anmedinas@gmail.com">
+    <span class="fa fa-envelope-o"></span>
+     
+    Contacto
+  </a>
+</li>
+<li>
+  <a href="https://github.com/anmedinas">
+    <span class="fa fa-github"></span>
+     
+    GitHub
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore"><center>
+<h1>
+Minería de Datos con R
+</h1>
+</center></h1>
+
+</div>
+
+
+<div id="introduccion." class="section level1">
+<h1>Introducción.</h1>
+<p>Los datos han pasado a constituir parte escencial de cualquier empresa, desde el ámbito del entretenimiento personal hasta los negocios y la planificación estratégica de grandes organizaciones. Las tecnologı́as de captura, procesamiento y comunicación de datos los han puesto en primer plano. La noción de diluvio de datos hace referencia a esa marea aparentemente incontenible de datos que rodean a las personas y organizaciones hoy. Para analizar y sacar el máximo provecho de este gran volumen de datos, los profesionales requieren tener conocimiento tanto teórico como prácticos de lo que se conoce como Ciencia de los Datos o más conocido como datascience que incluye áreas de <a href="https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos"><strong>Minerı́a de Datos</strong></a>, <a href="https://es.wikipedia.org/wiki/B%C3%BAsqueda_y_recuperaci%C3%B3n_de_informaci%C3%B3n"><strong>Recuperación de Información</strong></a> , visualización y gestión de datos. El presente curso apunta a formar profesionales que trabajen como analistas expertos en el manejo de datos complejos y masivos, por otro lado, proporcionará las bases del lenguaje de programación estadı́stica en R, la lengua franca de la estadı́stica, el cual te permitirá escribir programas que lean, manipulen y analicen <a href="https://smarterworkspaces.kyocera.es/blog/diferencia-datos-estructurados-no-estructurados/"><strong>datos estructurados</strong></a> , como <a href="https://smarterworkspaces.kyocera.es/blog/diferencia-datos-estructurados-no-estructurados/"><strong>datos no estructurados</strong></a>, una introducción a los sistemas de base gráficos y al paquete para graficar ggplot2 para visualización de datos entre otros.</p>
+</div>
+<div id="objetivos." class="section level1">
+<h1>Objetivos.</h1>
+<p>Al término del curso, podrás manipular datos, generar análisis estadistı́cos y representación gráfica a través del procesamiento cuantitativo de datos de forma eficiente, clara y elegante mediante reporterı́a markdown y knitr. Este curso esta dirigido a cualquier persona que le apasiona el análisis de datos, la visualización y la construcción de modelos predictivos.</p>
+</div>
+<div id="herramientas." class="section level1">
+<h1>Herramientas.</h1>
+<p>Las herramientas que se utilizarán en este cursos son <a href="https://www.r-project.org/"><strong>R</strong></a>, <a href="https://www.rstudio.com/"><strong>Rstudio</strong></a>, <a href="https://www.latex-project.org/"><strong>LaTeX</strong></a>.</p>
+</div>
+<div id="contenidos." class="section level1">
+<h1>Contenidos.</h1>
+<div id="modulo-1-fundamentos-de-r." class="section level2">
+<h2>Módulo 1: Fundamentos de R.</h2>
+<p>Comenzamemos a familiarizarnos con Rstudio y las primeras nociones de R. ¿Como ingreso instrucciones?, ¿Como guardo mis instrucciones?, ¿En que directorio estoy?, ¿Como corro mis primeros códigos?. Aprenderemos a escribir vectores, matrices y arreglos, listas, dataframes, crear factores , tablas y crear nuestas propias funciones. En definitiva, introduciremos R desde cero para todo aquel que no está familiarizado con este entorno</p>
+<p>Además, realizaremos operaciones con variables en R, operaciones aritméticas, operaciones lógicas, comandos condicionales para comprobar el uso de operaciones lógicas, estructura de conjunto de datos o datasets. Utilización de dataframes. En particular, un dataframe es una matriz en la que filas son observaciones y las columnas variables que hay de cada observación. En esta parte generaremos dataframes con el que operaremos el resto del curso. Veremos como crear subsets del dataframe original y aprender a acceder a estos datos. Datos indexados en el tiempo, elementos de algebra matricial, y simulación estadı́stica.</p>
+</div>
+<div id="modulo-2-origen-y-limpieza-de-datos." class="section level2">
+<h2>Módulo 2: Origen y limpieza de Datos.</h2>
+<p>Las fuentes de datos suelen ser una de las mayores preocupaciones, pues las principales preguntas que rondan en la cabeza de los cientı́ficos de datos a la hora de trabajar son: ¿De donde obtengo los datos?, ¿Como trabajo con datos que son no estucturados?, ¿Cómo convertirmos en un dataframe u otro objeto que podamos utilizar en R?. Crearemos scripts de preprocesamiento de datos utilizando <strong>dplyr</strong> y <strong>plyr</strong>, librerı́as potentes a la hora de procesar datos puesto que nos permiten filtrar filas y columnas, seleccionar columnas, seleccionar filas, crear nuevas variables, pivotear tablas , crear resumenes estadı́sticos, transformar datos, etc. En resumen, permite emular lo que hace <strong>SQL</strong> en una base de datos estructurada desde la comodidad de Rstudio.</p>
+</div>
+<div id="modulo-3-modelizacion-y-prediccion." class="section level2">
+<h2>Módulo 3: Modelización y Predicción.</h2>
+<p>El aprendizaje es una habilidad de la que disponen gran parte de los sistemas naturales para adaptarse al entorno en el que viven. Es por ello una propiedad interesante de emular de manera artificial puesto que muchos problemas de ingenierı́a requieren para su correcto funcionamiento algún tipo de adaptación al entorno en el que operan. Definir de manera única y precisa el término aprendizaje resulta complicado ya que se debe abordar desde diferentes puntos de vista. En el contexto de sistemas artificiales, el aprendizaje es un proceso que produce una función de aplicación de la información de entrenamiento extraı́da de algún entorno. Sin embargo, es necesario que el aprendizaje efectue algún tipo de inducción a partir de la información disponible.</p>
+<p>Para poder inducir, se precisa de un conjunto de medidas o ejemplos asociado al proceso que se quiere modelar. Este tipo de aprendizaje, denominado aprendizaje inductivo, se convierte de hecho en un aprendizaje con ejemplos que es en el fondo un problema de aproximación de una función de la que se conoce unicamente un conjunto de puntos. No obstante, este proceso es complejo por dos aspectos: un gran número de variables asociado al espacio de entrada de la función a aproximar y las muestras disponibles suelen ser escasas y tener asociada una cierta incertidumbre. Exiten dos maneras fundamentales de aprender con ejemplos. En la primera, conocida con el nombre de aprendizaje no supervisado son aquellos en lo que no disponemos de un conjunto de ejemplos previamente clasificados, si no que unicamente a partir de las propiedades de los ejemplos intentamos dar una clasificación, o clustering de los ejemplos segun su similaidad, en este ı́tem, tenemos los modelos como KNN, K-means. De la otra vereda, los modelos de aprendizaje supervisado son aquellos que, a partir de un conjunto de ejemplos clasificados o más conocido como conjunto de entrenamiento, intentamos asignar una clasificación a un segundo conjunto de datos conocidos como conjunto. Dentro de esta categorı́a tenemos los métodos de Boosting, Regresión, entre otros.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modulo-4-visualizacion-de-datos-y-reportes." class="section level2">
+<h2>Módulo 4: Visualización de Datos y Reportes.</h2>
+<p>En este módulo vamos a dar un repaso general de las principales funciones gráficas que ofrece R base. Como R está especificamente diseñado para la ciencia de los datos, incluye en su raı́z una buena cantidad de opciones para dibujar gráficos de forma versátil, clara y eficiente. Sin embargo, esto no es todo el potencial que puede brindar R en cuanto a la visualización de datos. Existen diferentes paquetes mucho más potente como lo son ggplot2 y Highcharter. Otra de las herramientas que veremos en este módulo es knitr y markodwn. Knitr es una herramienta utilizada para generación de informes dińamicos en R. Este paquete permite integrar código de R en documentos LaTeX, LyX, HTML, Markdown, entre otros. Knitr esta inspirado en Sweave y escrito con un diseño diferente para mejor modularidad, asi que es más fácil de mantener y extender. Sweave puede ser considerado como subconjunto de Knitr , pues todas las caracterı́sticas de Sweave están disponibles en Knitr. Algunas extensiones de incluyen el formato R markdown que es ampliamente utilizado en informes publicados en Rpub.</p>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<div id="modulo-5-finanzas-computacionales." class="section level2">
+<h2>Módulo 5: Finanzas Computacionales.</h2>
+<p>Harry Markowitz concibió el problema de selección de cartera como un ejercicio de optimización de ventana media. Esto requirió mas potencia de cálculo de la que estaba disponible en ése entonces, por lo que trabajó en algoritmos útiles para soluciones aproximadas. Con la misma idea, comenzaron las matemáticas financieras pero divergieron haciendo suposiciones simplificadoras para expresar soluciones cerradas simples que no requirieron sofisticadas ciencias de la computación para evaluar.</p>
+<p>Durante la década del 70 el enfoque principal de las finanzas se centró en el precio de las acciones y el análisis de tı́tulos hipotecarios. A fines de los 70 y principios de los 80 llegó a Wall Street un grupo de jovenes profesionales cuantitativos que se hicieron conocidos como cientı́ficos de cohetes y trajeron consigo sus computadoras personales. Esto condujo a una explosión de la cantidad y variedad de aplicaciones en finanzas computacionales. Muchas de las nuevas técnicas provienen del procesamiento de señales, reconocimiento de voz en lugar de los campos tradicionales de economı́a computacional como optimización y análisis de series temporales. A finales de los 80, al término de la Guerra Frı́a un gran grupo de fı́sicos y matemáticos aplicados desplazados llegaron a Wall Street. Estas personas se conocen como ingenieros financieros. Esto dio lugar a una segunda extensión de la gama de métodos computacionales utilizados en finanzas, también dio a paso de las computadoras personales a centrales y supercomputadoras.</p>
+<p>La estadı́stica en este campo, no ha quedado ajena puesto que con el avance de la computación y el escalamiento considerable de la información disponible en cada instante del tiempo ha permitido que diversos estudios empı́ricos se centren en descubrir caracterı́sticas estadı́sticas interesantes en los datos de series temporales destinadas a ampliar y consolidar hechos estilizados conocidos 4 , la implementación de modelos que mejoran el precio de los derivados y anticipa el movimiento del precio de las acciones entre otros. En este módulo veremos elementos de riesgo financiero como VaR (Value at Risk), series de tiempo no lineales y estimación, aplicaciones en la construcción de portafolios de inversión con datos de la <a href="http://www.bolsadesantiago.com/Paginas/home.aspx"><strong>Bolsa de Santiago</strong></a> y datos de <a href="https://finance.yahoo.com/"><strong>Yahoo Finance</strong></a></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+
+<p>Copyright &copy; 2018 Andres C. Medina. All rights reserved.</p>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

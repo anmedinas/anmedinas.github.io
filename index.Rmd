@@ -1,0 +1,359 @@
+---
+title: "<center><h1> Minería de Datos con R </h1></center>"
+output:
+  # prettydoc::html_pretty:
+  html_document:
+    toc: false
+  #  theme: architect
+  #  highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, echo=FALSE}
+suppressMessages(library(readxl))
+suppressMessages(library(ggplot2))
+suppressMessages(library(gridExtra))
+suppressMessages(library(MASS))
+suppressMessages(library(corrplot))
+suppressMessages(library(grid))
+suppressMessages(library(devtools))
+suppressMessages(library(artyfarty))
+suppressMessages(library(scales))
+suppressMessages(library(ggcorrplot))
+suppressMessages(library(RColorBrewer))
+suppressMessages(library(plyr))
+suppressMessages(library(dplyr))
+suppressMessages(library(knitr))
+suppressMessages(library(extrafont))
+suppressMessages(library(prettydoc))
+suppressMessages(library(rmarkdown))
+suppressMessages(library(nortest))
+suppressMessages(library(latex2exp))
+suppressMessages(library(cowplot))
+suppressMessages(library(ggExtra))
+```
+
+# Introducción.
+Los datos han pasado a constituir parte escencial de cualquier empresa, desde el
+ámbito del entretenimiento personal hasta los negocios y la planificación
+estratégica de grandes organizaciones. Las tecnologı́as de captura, procesamiento
+y comunicación de datos los han puesto en primer plano. La noción de diluvio de 
+datos hace referencia a esa marea aparentemente incontenible de datos que rodean 
+a las personas y organizaciones hoy. Para analizar y sacar el máximo provecho 
+de este gran volumen de datos, los profesionales requieren tener conocimiento 
+tanto teórico como prácticos de lo que se conoce como Ciencia de los Datos o 
+más conocido como datascience que incluye áreas de [**Minerı́a de Datos**](https://es.wikipedia.org/wiki/Miner%C3%ADa_de_datos), 
+[**Recuperación de Información**](https://es.wikipedia.org/wiki/B%C3%BAsqueda_y_recuperaci%C3%B3n_de_informaci%C3%B3n) , 
+visualización y gestión de datos. El presente curso apunta a formar profesionales que trabajen como analistas 
+expertos en el manejo de datos complejos y masivos, por otro lado,  proporcionará
+las bases del lenguaje de programación estadı́stica en R, la lengua franca de
+la estadı́stica, el cual te permitirá escribir programas que lean, manipulen
+y analicen [**datos estructurados**](https://smarterworkspaces.kyocera.es/blog/diferencia-datos-estructurados-no-estructurados/) , como [**datos no estructurados**](https://smarterworkspaces.kyocera.es/blog/diferencia-datos-estructurados-no-estructurados/), una introducción a los sistemas de base gráficos y al paquete para graficar ggplot2 para visualización 
+de datos entre otros.
+
+# Objetivos.
+Al término del curso, podrás manipular datos, generar análisis estadistı́cos
+y representación gráfica a través del procesamiento cuantitativo de datos de 
+forma eficiente, clara y elegante mediante reporterı́a markdown y knitr.
+Este curso esta dirigido a cualquier persona que le apasiona el análisis de 
+datos, la visualización y la construcción de modelos predictivos.
+
+# Herramientas.
+Las herramientas que se utilizarán en este cursos son [**R**](https://www.r-project.org/),
+[**Rstudio**](https://www.rstudio.com/), [**LaTeX**](https://www.latex-project.org/).
+
+# Contenidos.
+## Módulo 1: Fundamentos de R.
+Comenzamemos a familiarizarnos con Rstudio y las primeras nociones de R. 
+¿Como ingreso instrucciones?, ¿Como guardo mis instrucciones?, 
+¿En que directorio estoy?, ¿Como corro mis primeros códigos?. Aprenderemos 
+a escribir vectores, matrices y arreglos, listas, dataframes, crear factores 
+, tablas y crear nuestas propias funciones. En definitiva, introduciremos R 
+desde cero para todo aquel que no está familiarizado con este entorno
+
+Además, realizaremos operaciones con variables en R, operaciones aritméticas, 
+operaciones lógicas, comandos condicionales para comprobar el uso de operaciones
+lógicas, estructura de conjunto de datos o datasets. Utilización de dataframes. 
+En particular, un dataframe es una matriz en la que filas son observaciones y 
+las columnas variables que hay de cada observación. En esta parte generaremos 
+dataframes con el que operaremos el resto del curso. Veremos como crear subsets 
+del dataframe original y aprender a acceder a estos datos. Datos indexados en el 
+tiempo, elementos de algebra matricial, y simulación estadı́stica.
+
+## Módulo 2: Origen y limpieza de Datos.
+Las fuentes de datos suelen ser una de las mayores preocupaciones, pues las 
+principales preguntas que rondan en la cabeza de los cientı́ficos de datos a
+la hora de trabajar son: ¿De donde obtengo los datos?, ¿Como trabajo con datos 
+que son no estucturados?, ¿Cómo convertirmos en un dataframe u otro objeto 
+que podamos utilizar en R?. Crearemos scripts de preprocesamiento de datos 
+utilizando **dplyr** y **plyr**, librerı́as potentes a la hora de procesar datos puesto
+que nos permiten filtrar filas y columnas, seleccionar columnas, seleccionar 
+filas, crear nuevas variables, pivotear tablas , crear resumenes estadı́sticos, 
+transformar datos, etc. En resumen, permite emular lo que hace **SQL** en una base 
+de datos estructurada desde la comodidad de Rstudio.
+
+## Módulo 3: Modelización y Predicción. 
+El aprendizaje es una habilidad de la que disponen gran parte de los sistemas 
+naturales para adaptarse al entorno en el que viven. Es por ello una propiedad 
+interesante de emular de manera artificial puesto que muchos problemas de 
+ingenierı́a requieren para su correcto funcionamiento algún tipo de adaptación al 
+entorno en el que operan. Definir de manera única y precisa el término aprendizaje 
+resulta complicado ya que se debe abordar desde diferentes puntos de vista. 
+En el contexto de sistemas artificiales, el aprendizaje es un proceso que produce 
+una función de aplicación de la información de entrenamiento extraı́da de algún 
+entorno. Sin embargo, es necesario que el aprendizaje efectue algún tipo de 
+inducción a partir de la información disponible.
+
+Para poder inducir, se precisa de un conjunto de medidas o ejemplos asociado
+al proceso que se quiere modelar. Este tipo de aprendizaje, denominado 
+aprendizaje inductivo, se convierte de hecho en un aprendizaje con ejemplos que 
+es en el fondo un problema de aproximación de una función de la que se 
+conoce unicamente un conjunto de puntos. No obstante, este proceso es complejo 
+por dos aspectos: un gran número de variables asociado al espacio de entrada de 
+la función a aproximar y las muestras disponibles suelen ser escasas y tener 
+asociada una cierta incertidumbre. Exiten dos maneras fundamentales de 
+aprender con ejemplos. En la primera, conocida con el nombre de aprendizaje 
+no supervisado son aquellos en lo que no disponemos de un conjunto de ejemplos 
+previamente clasificados, si no que unicamente a partir de las propiedades de 
+los ejemplos intentamos dar una clasificación, o clustering de los ejemplos 
+segun su similaidad, en este ı́tem, tenemos los modelos como KNN, K-means. De
+la otra vereda, los modelos de aprendizaje supervisado son aquellos que, a 
+partir de un conjunto de ejemplos clasificados o más conocido como conjunto 
+de entrenamiento, intentamos asignar una clasificación a un segundo conjunto 
+de datos conocidos como conjunto. Dentro de esta categorı́a tenemos los métodos
+de Boosting, Regresión, entre otros.
+
+```{r, echo=FALSE, fig.width=12, fig.height=4, fig.align='center'}
+options(warn = -1) 
+smP <- function(formula,data,...){
+  M <- model.frame(formula, data)
+  sm.spline(x =M[,2],y =M[,1])}
+
+# an s3 method for predictdf (called within stat_smooth)
+predictdf.smooth.Pspline <- function(model, xseq, se, level) {
+  pred <- predict(model, xseq)
+  data.frame(x = xseq, y = c(pred))
+}
+
+d <- ggplot(mtcars, aes(qsec, wt))
+dd <- d + geom_point() +  
+  stat_smooth(method = smP, se= FALSE, colour='red', formula = y~x) + 
+  stat_smooth(method = 'gam', colour = 'blue', formula = y~s(x,bs='ps')) + 
+  theme_gray()
+
+suppressMessages(library(glmnet))
+data(QuickStartExample)
+fit <- glmnet::glmnet(x, y) 
+qq  <- autoplot(fit) + 
+  theme_gray() +
+  theme(legend.position="none") 
+  
+fit <- glmnet::cv.glmnet(x, y)
+qd <- autoplot(fit, colour = 'blue') + theme_gray()
+
+grid.arrange(dd, qq, qd, ncol=3, nrow=1)
+```
+
+
+## Módulo 4: Visualización de Datos y Reportes.
+En este módulo vamos a dar un repaso general de las principales funciones 
+gráficas que ofrece R base. Como R está especificamente diseñado para la 
+ciencia de los datos, incluye en su raı́z una buena cantidad de opciones
+para dibujar gráficos de forma versátil, clara y eficiente. Sin embargo, esto 
+no es todo el potencial que puede brindar R en cuanto a la visualización de 
+datos. Existen diferentes paquetes mucho más potente como lo son ggplot2 y
+Highcharter. Otra de las herramientas que veremos en este módulo es knitr y 
+markodwn. Knitr es una herramienta utilizada para generación
+de informes dińamicos en R. Este paquete permite integrar código de R en 
+documentos LaTeX, LyX, HTML, Markdown, entre otros. Knitr esta inspirado 
+en Sweave y escrito con un diseño diferente para mejor modularidad, asi que es 
+más fácil de mantener y extender. Sweave puede ser considerado como subconjunto 
+de Knitr , pues todas las caracterı́sticas de Sweave están disponibles en
+Knitr. Algunas extensiones de incluyen el formato R markdown que es ampliamente
+utilizado en informes publicados en Rpub.
+
+```{r, echo=FALSE, fig.width=12, fig.height=4, fig.align='center'}
+n <- 1000            # Num. Simulaciones
+u <- runif(n)
+v <- runif(n)
+x <- rep(0,n)
+y <- rep(0,n)
+for(i in 1:n)
+{ x[i] <- sqrt(-2*log(u[i]))*cos(2*pi*v[i])
+  y[i] <- sqrt(-2*log(u[i]))*sin(2*pi*v[i])}
+
+x1 <- mvrnorm(n, mu=c(0,0), Sigma=matrix(c(1,0,0,1), ncol=2))
+df = data.frame(x1); colnames(df) = c("x","y")
+
+commonTheme = list(labs(color="Density",fill="Density",
+                        x=TeX("$x$"),
+                        y=TeX("$y$")),
+                   # theme_bw(),
+                   theme(legend.position=c(0,1),
+                         legend.justification=c(0,1)))
+
+plt1 <- ggplot(data=df,aes(x,y)) + 
+  stat_density2d(aes(fill=..level..,alpha=..level..),geom='polygon',colour='black') + 
+  scale_fill_continuous(low="green",high="red") +
+  geom_smooth(method=lm,linetype=2,colour="red",se=F) + 
+  guides(alpha="none") +
+  geom_point(alpha = 0.4) + commonTheme
+
+# Version Dist. Marginal
+d <- data.frame(x,y)
+plt1 <- ggplot(d,aes(x, y)) + geom_point(alpha = 0.1)
+plt2 <- ggMarginal(plt1 + theme_gray(),type="histogram",
+           fill="steelblue",col="darkblue",bins=60)
+df = data.frame(x,y); colnames(df) = c("x","y")
+commonTheme = list(labs(color="Density",fill="Density",x=TeX("$x$"),
+                        y=TeX("$y$")),theme_bw(),theme(legend.position=c(0,1),
+                         legend.justification=c(0,1)))
+plt3 <- ggplot(data=df,aes(x,y)) + 
+  stat_density2d(aes(fill=..level..,alpha=..level..),geom='polygon') + 
+  scale_fill_continuous(low="green",high="red") +
+  #geom_smooth(method=lm,linetype=2,colour="red",se=F) + 
+  guides(alpha="none") +
+  geom_point(alpha = 0.1) + commonTheme
+
+## Data
+suppressMessages(library(ggplot2))
+legend.title <- ""
+dsmall <- diamonds[sample(nrow(diamonds), 1000), ]
+plt4 <- ggplot(dsmall, aes(color, price/carat)) + 
+  geom_jitter(alpha = I(1 / 2), aes(color=color), size=2) +
+  #theme(panel.border = element_blank()) +
+  theme_gray() +
+  theme(legend.position="none") +
+  xlab("Tipo de Carro") + ylab("Precio")
+
+grid.arrange(plt2, plt3, plt4, ncol=3, nrow=1)
+```
+
+## Módulo 5: Finanzas Computacionales.
+Harry Markowitz concibió el problema de selección de cartera como un ejercicio 
+de optimización de ventana media. Esto requirió mas potencia de cálculo de la 
+que estaba disponible en ése entonces, por lo que trabajó en algoritmos útiles 
+para soluciones aproximadas. Con la misma idea, comenzaron las matemáticas 
+financieras pero divergieron haciendo suposiciones simplificadoras para expresar 
+soluciones cerradas simples que no requirieron sofisticadas ciencias de la 
+computación para evaluar.
+
+Durante la década del 70 el enfoque principal de las finanzas se centró en el
+precio de las acciones y el análisis de tı́tulos hipotecarios. A fines de los 70 y
+principios de los 80 llegó a Wall Street un grupo de jovenes profesionales 
+cuantitativos que se hicieron conocidos como cientı́ficos de cohetes y trajeron 
+consigo sus computadoras personales. Esto condujo a una explosión de la cantidad y 
+variedad de aplicaciones en finanzas computacionales. Muchas de las nuevas técnicas
+provienen del procesamiento de señales, reconocimiento de voz en lugar de los campos
+tradicionales de economı́a computacional como optimización y análisis de series
+temporales. A finales de los 80, al término de la Guerra Frı́a un gran grupo de 
+fı́sicos y matemáticos aplicados desplazados llegaron a Wall Street. Estas personas 
+se conocen como ingenieros financieros. Esto dio lugar a una segunda extensión de 
+la gama de métodos computacionales utilizados en finanzas, también dio a paso de 
+las computadoras personales a centrales y supercomputadoras.
+
+La estadı́stica en este campo, no ha quedado ajena puesto que con el avance de
+la computación y el escalamiento considerable de la información disponible en cada 
+instante del tiempo ha permitido que diversos estudios empı́ricos se centren en 
+descubrir caracterı́sticas estadı́sticas interesantes en los datos de series 
+temporales destinadas a ampliar y consolidar hechos estilizados conocidos 4 , la 
+implementación de modelos que mejoran el precio de los derivados y anticipa el 
+movimiento del precio de las acciones entre otros. En este módulo veremos elementos 
+de riesgo financiero como VaR (Value at Risk), series de tiempo no lineales y 
+estimación, aplicaciones en la construcción de portafolios de inversión con datos 
+de la [**Bolsa de Santiago**](http://www.bolsadesantiago.com/Paginas/home.aspx) y 
+datos de [**Yahoo Finance**](https://finance.yahoo.com/)
+
+```{r,echo=FALSE, fig.width=12, fig.height=4, fig.align='center'}
+options(warn = -1) 
+suppressMessages(library("quantmod"))
+suppressMessages(library("tidyquant"))
+suppressMessages(library("fGarch"))
+suppressMessages(library("xts"))
+suppressMessages(library("lubridate"))
+suppressMessages(library("ggplot2"))
+suppressMessages(library("gridExtra"))
+suppressMessages(library("tidyquant"))
+suppressMessages(library("dplyr"))
+suppressMessages(library("tibble"))
+set.seed(20170601)
+
+## Funcion formato Data con fecha
+data.read <- function(file){ 
+  df <- read.csv(file)
+  df$dolar <- round(df$dolar,digits = 0)
+  df$Fecha <- dmy(df$Fecha)
+  return(df)}
+
+## Lectura Dolar Observado
+d <- data.read("datasets/dolar.csv")
+
+## Plot Serie Dolar
+plot0 <- ggplot(d,aes(Fecha,dolar)) + geom_line(aes(color="Dolar")) +
+  scale_colour_manual("",breaks=c(""),values=c("darkblue")) +
+  ggtitle("Dolar Observado") + xlab("Periodo") + ylab(expression(S[t])) + 
+  theme(plot.title = element_text(lineheight = .7,face="bold")) +
+  theme_gray()
+
+## Retorno Dolar Observado
+rt   <- diff(log(d$dolar))
+date <- d$Fecha[-1]
+rt1   <- cbind.data.frame(date,rt)
+
+m  <- 180 # subintervalos
+mu <- mean(rt)
+sigma <- sd(rt)
+n  <- 100 # num.simulaciones
+T  <- 180 # Tiempo a estimar
+dt <- T/m
+
+## Matriz guarda Simulacion
+S     <- matrix(0,nrow = m,ncol=n)
+S[1,] <- d[length(d$dolar),2]
+for(k in 1:n)
+{for(i in 2:m){
+    S[i,k] <- S[i-1,k]*exp((mu-0.5*sigma^2)*dt + 
+      sigma*sqrt(dt)*rnorm(1))}}
+
+## 180 datos simulados (formato fecha)
+date  <- seq(as.Date("2016/07/04"),as.Date("2016/12/30"),"days")
+df    <- data.frame(fecha=date,value=S)
+plot1 <- ggplot(data=df,aes(x=df[,1])) + xlab("Tiempo") + 
+  ylab(expression(S[t])) + ggtitle("Simulacion Dolar Observado") +
+  theme(plot.title = element_text(lineheight = .7,face="bold"))
+set.seed(1234)  
+for(i in 2:ncol(df))
+  { plot1 <- plot1 + geom_line(aes_string(y=names(df)[i]),
+              color=colors()[floor(runif(1,1,200))]) +
+    theme_gray()}
+
+## Simulacion Retorno
+nsim <- 10000
+Rsim <- rep(0,nsim)
+for(i in 1:nsim){Rsim[i] <- (mu-0.5*sigma^2) + sigma*rnorm(1)}
+
+# Ajuste Parametros t-Student
+suppressMessages(library("car"))
+suppressMessages(library("MASS"))
+fit.std <- fitdistr(Rsim,'t')
+mu.std  <- fit.std$estimate[["m"]]
+lambda  <- fit.std$estimate[["s"]]
+nu      <- fit.std$estimate[["df"]]
+## Histograma Dolar Observado Simulacion Monte-Carlo
+plot3 <- ggplot(data.frame(Rsim),aes(Rsim)) +
+  geom_histogram(aes(y=..density..),binwidth = 0.00019) +
+  stat_function(fun=dnorm,args = list(mean=mean(Rsim),sd=sd(Rsim)),
+                aes(colour="Normal"),size=1) + 
+  stat_function(fun=function(x) dt((x-mu.std)/lambda,nu)/lambda,
+                aes(colour="Tstudent"),size=1) + 
+  scale_colour_manual("Densidad",values=c("black","darkred")) +
+  xlab(expression(R[t])) + ylab("Density") + 
+  ggtitle("Retorno Dolar Observado") +
+  theme_gray() + theme(legend.position="none")
+  
+grid.arrange(plot0, plot1, plot3, ncol=3, nrow=1)
+```
+

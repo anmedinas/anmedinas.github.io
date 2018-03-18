@@ -1,0 +1,25 @@
+name: "Minería de Datos con R"
+fontsize: 24pt
+navbar:
+  title: "Minería de Datos con R"
+  left:
+    - text: "Home"
+      icon: fa-home
+      href: index.html
+    - text: "About"
+      icon: fa-info
+      href: others/cv_anmedinas.pdf
+    - text: "Contacto"
+      href: mailto:anmedinas@gmail.com
+      icon: fa-envelope-o
+    - text: "GitHub"
+      icon: fa-github
+      href: https://github.com/anmedinas   
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+    include:
+      after_body: footer.html
+    css: styles.css
+output_dir: "."
