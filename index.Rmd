@@ -259,7 +259,7 @@ La estadı́stica en este campo, no ha quedado ajena puesto que con el avance de
 la computación y el escalamiento considerable de la información disponible en cada 
 instante del tiempo ha permitido que diversos estudios empı́ricos se centren en 
 descubrir caracterı́sticas estadı́sticas interesantes en los datos de series 
-temporales destinadas a ampliar y consolidar hechos estilizados conocidos 4 , la 
+temporales destinadas a ampliar y consolidar hechos estilizados conocidos, la 
 implementación de modelos que mejoran el precio de los derivados y anticipa el 
 movimiento del precio de las acciones entre otros. En este módulo veremos elementos 
 de riesgo financiero como VaR (Value at Risk), series de tiempo no lineales y 
