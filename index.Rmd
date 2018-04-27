@@ -83,6 +83,8 @@ dataframes con el que operaremos el resto del curso. Veremos como crear subsets
 del dataframe original y aprender a acceder a estos datos. Datos indexados en el 
 tiempo, elementos de algebra matricial, y simulación estadı́stica.
 
+### [Slides Módulo 1 parte 01: 2018/04/28](Mod01_DMR_UBB_20180428/Mod01_DMR_UBB_20180428_Part01.slides.html) 
+
 ## Módulo 2: Origen y limpieza de Datos.
 Las fuentes de datos suelen ser una de las mayores preocupaciones, pues las 
 principales preguntas que rondan en la cabeza de los cientı́ficos de datos a

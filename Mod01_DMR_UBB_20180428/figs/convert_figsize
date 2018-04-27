@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+
+LISTA=`ls *.png`
+for fotos in $LISTA; do
+	echo "Redimensionando $fotos a 600x500"
+	convert $fotos -resize 600x500 -quality 100 $fotos
+done

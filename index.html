@@ -20,8 +20,8 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -31,10 +31,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -251,6 +253,9 @@ Minería de Datos con R
 <h2>Módulo 1: Fundamentos de R.</h2>
 <p>Comenzamemos a familiarizarnos con Rstudio y las primeras nociones de R. ¿Como ingreso instrucciones?, ¿Como guardo mis instrucciones?, ¿En que directorio estoy?, ¿Como corro mis primeros códigos?. Aprenderemos a escribir vectores, matrices y arreglos, listas, dataframes, crear factores , tablas y crear nuestas propias funciones. En definitiva, introduciremos R desde cero para todo aquel que no está familiarizado con este entorno</p>
 <p>Además, realizaremos operaciones con variables en R, operaciones aritméticas, operaciones lógicas, comandos condicionales para comprobar el uso de operaciones lógicas, estructura de conjunto de datos o datasets. Utilización de dataframes. En particular, un dataframe es una matriz en la que filas son observaciones y las columnas variables que hay de cada observación. En esta parte generaremos dataframes con el que operaremos el resto del curso. Veremos como crear subsets del dataframe original y aprender a acceder a estos datos. Datos indexados en el tiempo, elementos de algebra matricial, y simulación estadı́stica.</p>
+<div id="slides-modulo-1-parte-01-20180428" class="section level3">
+<h3><a href="Mod01_DMR_UBB_20180428/Mod01_DMR_UBB_20180428_Part01.slides.html">Slides Módulo 1 parte 01: 2018/04/28</a></h3>
+</div>
 </div>
 <div id="modulo-2-origen-y-limpieza-de-datos." class="section level2">
 <h2>Módulo 2: Origen y limpieza de Datos.</h2>
